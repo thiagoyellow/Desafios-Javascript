@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+
+    <title>Receita {{item.title}}</title>
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <nav>
+        <img src="/assets/logo.png" alt="Logo">
+        <a href="/">Voltar para Home</a>
+        <a href="/about">Sobre</a>
+
+    </nav>
+</head>
+
+<body>
+    <section class="recipe">
+
+        <div class="card" id="{{item.id}}">
+            <div class="card_image">
+                <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/{{item.image}}" alt="Imagem de {{item.title}}">
+            </div>
+
+            <div class="card_info">
+                
+                <h1 class="title">{{item.title}}</h1>
+                <h3 class="author">por {{item.author}}</h3>
+            </div>
+
+            <div class="card_content">
+                <h1>Ingredientes:</h1>
+                <p>{{item.ingredients}}</p>
+
+                <h1> Preparo: </h1>
+                <p>{{item.preparation}}</p>
+
+                <h1> Informações: </h1>
+                <p>{{item.information}}</p>
+            </div>
+
+        </div>
+</section>
+
+</body>
+</html>

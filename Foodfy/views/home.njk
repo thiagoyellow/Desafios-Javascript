@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <title>Foodfy</title>
+    
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <nav>
+        <img src="/assets/logo.png" alt="Logo">
+        <a href="/about">Sobre</a>
+        <a href="/recipes">Receitas</a>
+    </nav>
+</head>
+
+<body>
+    <div class="cabeca">
+        <div>
+            <h1>As melhores receitas</h1>
+            <p>
+              Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.
+            </p>
+        </div>
+          <img src="assets/chef.png" alt="Chef">
+    </div>
+
+    <div class="maisAcessadas">
+        <h2>Mais acessadas</h2>
+    </div>
+
+<section class="cards">
+    {% for item in items %}
+        <div class="card" id="{{item.id}}">
+
+            <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/{{item.image}}" alt="Imagem de {{item.title}}">
+            
+            <div>
+            <h1 class="title">{{item.title}}</h1>
+            <h3 class="author">por {{item.author}}</h3>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+    <script src="/scripts.js"></script>
+
+
+    <div class="footer">
+            <h2> Todos os créditos reservados, receitas Foodfy </h2>  
+    </div>
+</body>
+</html>
