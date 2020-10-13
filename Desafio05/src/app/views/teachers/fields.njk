@@ -1,0 +1,145 @@
+ <div class="item">
+            <div>Avatar URL</div>
+                <div>
+                    <input 
+                    type="url" 
+                    name="avatar_url"
+                    placeholder="http://" 
+                    value="{{teacher.avatar_url}}"
+                    >
+                </div>
+            </div>
+
+        <div class="item">
+            <div>Nome completo</div>
+                <div>
+                    <input
+                     type="text" 
+                     name="name"
+                     placeholder="Nome do Professor"
+                     value="{{teacher.name}}"
+                     > 
+                </div>
+        </div>
+
+        <div class="item">
+            <div>Data de Nascimento</div>
+                <div>
+                    <input
+                     type="date" 
+                     name="birth"
+                     value="{{teacher.birth}}"
+                     > 
+                </div>
+        </div>
+
+        <div class="item">
+            <div>Grau de escolaridade</div>
+                <div>
+                    <select name="formation">
+                        <option 
+                            value="Ensino Fundamental" 
+                            {% if teacher.formation == 'Ensino Fundamental' %} 
+                                selected="selected"
+                            {% endif %}> Ensino Fundamental
+                        </option>
+
+                        <option 
+                            value="Ensino Médio Incompleto" 
+                            {% if teacher.formation == 'Ensino Médio Incompleto' %} 
+                                selected="selected"
+                            {% endif %} >Ensino Médio Incompleto
+                        </option>
+
+                        <option 
+                            value="Ensino Médio Cursando" 
+                            {% if teacher.formation == 'Ensino Médio Cursando' %}
+                                selected="selected"
+                            {% endif %} >Ensino Médio Cursando
+                        </option>
+
+                        <option 
+                            value="Ensino Médio Completo" 
+                            {% if teacher.formation == 'Ensino Médio Completo' %}
+                                selected="selected"
+                            {% endif %}> Ensino Médio Completo
+                        </option>
+
+                        <option 
+                            value="Ensino Superior Incompleto" 
+                            {% if teacher.formation == 'Ensino Superior Incompleto' %}
+                                selected="selected"
+                            {% endif %}>Ensino Superior Incompleto
+                        </option>
+
+                        <option 
+                            value="Ensino Superior Cursando" 
+                            {% if teacher.formation == 'Ensino Superior Cursando' %}
+                                selected="selected"
+                            {% endif %}>Ensino Superior Cursando
+                        </option>
+
+                        <option 
+                            value="Ensino Superior Completo" 
+                            {% if teacher.formation == 'Ensino Superior Completo' %}
+                                selected="selected"
+                            {% endif %}>Ensino Superior Completo
+                        </option>
+
+                        <option 
+                            value="Mestrado" 
+                            {% if teacher.formation == 'Mestrado' %}
+                                selected="selected"
+                            {% endif %}>Mestrado
+                        </option>
+
+                        <option 
+                            value="Doutorado" 
+                            {% if teacher.formation == 'Doutorado' %}
+                                selected="selected"
+                            {% endif %}>Doutorado
+                        </option>
+
+                    </select>
+                </div>
+        </div>
+
+        <div class="item">
+            <div>Tipo de Aula</div>
+            <div>
+                <span>
+                    <input 
+                    type="radio" 
+                    name="type" 
+                    value="PRESENCIAL" 
+                    {% if teacher.type == 'PRESENCIAL' %}
+                        checked
+                    {% endif %}> Presencial
+                </span>
+
+                <span>
+                    <input 
+                    type="radio" 
+                    name="type" 
+                    value="ONLINE"
+                    {% if teacher.type == 'ONLINE' %}
+                        checked
+                    {% endif %}> À Distância
+                </span>
+
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Area de atuação</div>
+            <div>
+                <input 
+                type="text"
+                name="services"
+                placeholder="Separe as matérias lecionadas por vírgula"
+                value="{{teacher.services}}"
+                >
+            </div>
+        </div>
+
+        <button type="submit">Salvar</button>
